@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -6,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ahmad Danish Irfan</title>
   <style>
-    /* === Reset & Base === */
     * {
       margin: 0;
       padding: 0;
@@ -23,7 +21,6 @@
       position: relative;
     }
 
-    /* === SVG Background === */
     body::before {
       content: "";
       position: absolute;
@@ -31,19 +28,17 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%231a1a1a' d='M48.7,-44.7C53.8,-26.9,55.4,-9.8,51.5,6.8C47.6,23.4,38.2,37.2,24.1,43.9C9.9,50.5,-7.3,51.1,-22.5,46.9C-37.7,42.6,-50.8,33.5,-57.9,19.7C-65,6,-66.2,-10.2,-58.7,-24.1C-51.2,-38,-35,-49.3,-18.9,-52.1C-2.8,-54.9,13.2,-49.2,24.5,-39.4C35.8,-29.5,42.3,-15.5,48.7,-44.7Z' transform='translate(100 100) scale(1.2)'/%3E%3C/svg%3E");
+      background-image: url("image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%231a1a1a' d='M48.7,-44.7C53.8,-26.9,55.4,-9.8,51.5,6.8C47.6,23.4,38.2,37.2,24.1,43.9C9.9,50.5,-7.3,51.1,-22.5,46.9C-37.7,42.6,-50.8,33.5,-57.9,19.7C-65,6,-66.2,-10.2,-58.7,-24.1C-51.2,-38,-35,-49.3,-18.9,-52.1C-2.8,-54.9,13.2,-49.2,24.5,-39.4C35.8,-29.5,42.3,-15.5,48.7,-44.7Z' transform='translate(100 100) scale(1.2)'/%3E%3C/svg%3E");
       opacity: 0.2;
       z-index: -1;
     }
 
-    /* === Container === */
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 2rem 1.5rem;
     }
 
-    /* === Header === */
     header {
       text-align: center;
       margin: 4rem 0 2rem;
@@ -66,7 +61,6 @@
       animation: fadeInUp 1s ease 0.2s both;
     }
 
-    /* === Projects Section === */
     .section-title {
       font-size: 2rem;
       margin: 3rem 0 1.5rem;
@@ -125,7 +119,6 @@
       color: #bbb;
     }
 
-    /* === Animations === */
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -137,7 +130,6 @@
       }
     }
 
-    /* === Footer === */
     footer {
       text-align: center;
       padding: 2rem 0;
@@ -147,7 +139,6 @@
       border-top: 1px solid rgba(255,255,255,0.05);
     }
 
-    /* === Responsive === */
     @media (max-width: 600px) {
       h1 {
         font-size: 2.4rem;
@@ -177,26 +168,34 @@
   </footer>
 
   <script>
-    // Data proyek
+    // Ganti nama gambar di sini sesuai nama fail di repo
     const projects = [
-      { title: "Interactive Dashboard", desc: "Real-time data visualization with animated charts." },
-      { title: "E-Commerce UI", desc: "Modern shopping interface with smooth transitions." },
-      { title: "Task Manager App", desc: "Drag-and-drop todo list with local storage." },
-      { title: "3D Portfolio Concept", desc: "WebGL experiment using Three.js for immersive UX." }
+      { 
+        title: "Project 1", 
+        desc: "Description of project 1.", 
+        image: "HEHE.jpg" // ← GANTI DENGAN NAMA FILE GAMBAR SEBENAR
+      },
+      { 
+        title: "Project 2", 
+        desc: "Description of project 2.", 
+        image: "projek2.png" // ← JIKA ADA, GANTI DENGAN NAMA FILE
+      },
+      { 
+        title: "Project 3", 
+        desc: "Description of project 3.", 
+        image: "projek3.jpg" // ← GANTI JIKA PERLU
+      }
     ];
 
     const container = document.getElementById('projectsContainer');
 
     projects.forEach((proj, index) => {
-      // Delay animasi tiap kartu
       const delay = (index * 0.15) + 0.4;
-
       const card = document.createElement('div');
       card.className = 'project-card';
       card.style.animationDelay = `${delay}s`;
 
-      // Gambar placeholder bergerak (SVG placeholder dengan teks dinamis)
-      const imgSrc = `https://placehold.co/600x400/1e1e1e/6e8efb?text=${encodeURIComponent(proj.title)}`;
+      const imgSrc = proj.image;
 
       card.innerHTML = `
         <img src="${imgSrc}" alt="${proj.title}">
